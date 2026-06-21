@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞技宝 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f7f4;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #2b2b2b;
+            line-height: 1.7;
+            padding: 1.5rem;
+        }
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #fefcf7;
+            border-radius: 28px;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.04);
+            padding: 2.5rem 2.2rem;
+        }
+        /* hero */
+        .hero {
+            border-bottom: 1px solid #e4ddd0;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 480;
+            letter-spacing: -0.02em;
+            color: #2c281f;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 strong {
+            font-weight: 550;
+            color: #b8915c;
+        }
+        .hero .sub {
+            font-size: 1rem;
+            color: #655e51;
+            border-left: 4px solid #d3c8b4;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+        }
+        /* 引用块 */
+        .insight-box {
+            background: #f3efe9;
+            border-radius: 18px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.8rem 0;
+            color: #3f3a30;
+            border-left: 6px solid #b8915c;
+            font-size: 0.98rem;
+        }
+        .insight-box cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 450;
+            color: #7a6f5b;
+        }
+        .insight-box a {
+            color: #2b2b2b;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #bfa37a;
+        }
+        .insight-box a:hover {
+            color: #b8915c;
+        }
+
+        /* 通用标题 */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 460;
+            letter-spacing: -0.01em;
+            margin: 2rem 0 0.8rem 0;
+            color: #343025;
+            border-bottom: 2px solid #e7dfd1;
+            padding-bottom: 0.1rem;
+            display: inline-block;
+        }
+        p {
+            margin: 0.7rem 0;
+            text-align: justify;
+        }
+
+        /* 特点卡片 — 文章嵌入风格 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 1.8rem;
+            margin: 1.2rem 0;
+        }
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fbf9f5;
+            padding: 1rem 1rem 0.6rem 1rem;
+            border-radius: 14px;
+            border: 1px solid #e7e0d3;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .feature-item strong {
+            display: block;
+            font-weight: 550;
+            color: #4d4538;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        .feature-item span {
+            font-size: 0.92rem;
+            color: #5b5345;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            background: #faf8f3;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            margin: 2.4rem 0 1.2rem 0;
+            border: 1px solid #e3daca;
+        }
+        .faq-summary details {
+            margin: 0.3rem 0;
+            border-bottom: 1px dashed #d9cfbe;
+            padding: 0.5rem 0;
+        }
+        .faq-summary details:last-of-type {
+            border-bottom: none;
+        }
+        .faq-summary summary {
+            font-weight: 470;
+            cursor: pointer;
+            color: #3f382c;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq-summary summary::before {
+            content: "▸";
+            margin-right: 0.45rem;
+            color: #b8915c;
+            font-size: 1.2rem;
+        }
+        .faq-summary details[open] summary::before {
+            content: "▾";
+        }
+        .faq-summary .faq-answer {
+            color: #4a4438;
+            font-size: 0.93rem;
+            margin: 0.3rem 0 0 1.2rem;
+            padding-left: 0.2rem;
+            border-left: 2px solid #dacfc1;
+            padding-left: 0.8rem;
+        }
+        .faq-summary a {
+            color: #2b2b2b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #bda98b;
+        }
+
+        /* 底部 */
+        .footer-links {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e1d8ca;
+            font-size: 0.9rem;
+            color: #5e5749;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer-links .legal {
+            flex: 1;
+        }
+        .footer-links a {
+            color: #3f3a30;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #b9a788;
+            margin-right: 0.6rem;
+        }
+        .footer-links a:hover {
+            color: #b8915c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            body { padding: 0.8rem; }
+            .page { padding: 1.6rem 1.2rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .feature-grid { flex-direction: column; gap: 1rem; }
+            .feature-item { flex: 1 1 auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>关于 <strong>竞技宝</strong> · 站点说明</h1>
+        <div class="sub">信息整合 · 服务索引 · 可信参考</div>
+    </div>
+
+    <!-- 介绍 / 可信说明 -->
+    <p>
+        <a href="https://portal-cn-jjb.com" style="color:#2b2b2b; text-decoration:underline; text-underline-offset:3px;">竞技宝</a> 
+        是一个面向中文用户的综合信息门户，旨在为访客提供清晰、可靠的产品与平台索引。本站点始终以信息真实与表述克制为原则， 
+        不发布未经核实的承诺，也不以任何形式诱导点击或夸大服务范围。所有内容均基于公开资料与运行实践整理，并持续接受复核与更新。
+    </p>
+
+    <!-- 引用/提示框  -->
+    <div class="insight-box">
+        <p>“信息呈现应服务于使用者的判断，而非替代判断。作为索引节点，我们更关注内容的可追溯与表达的克制。”</p>
+        <cite>—— 竞技宝 · 内容准则</cite>
+    </div>
+
+    <!-- 优势区：三个特点，以卡片+段落融合 -->
+    <h2>站点特点</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>结构化索引</strong>
+            <span>分类清晰，覆盖多领域入口，减少信息噪声。每个链接均经过可用性确认。</span>
+        </div>
+        <div class="feature-item">
+            <strong>表述克制</strong>
+            <span>不堆砌营销词，不虚构资质，只陈述可验证的功能与服务边界。</span>
+        </div>
+        <div class="feature-item">
+            <strong>持续回顾</strong>
+            <span>内容随平台迭代做定期校正，避免过时或失准的描述影响判断。</span>
+        </div>
+    </div>
+
+    <!-- 说明区：具体使用场景 / 可信补充 -->
+    <h2>使用参考</h2>
+    <p>
+        日常使用中，用户通过 <a href="https://portal-cn-jjb.com" style="color:#2b2b2b; text-decoration:underline; text-underline-offset:3px;">竞技宝</a> 
+        获取功能导航与常见问题集合。无论是初次了解还是已有使用习惯，页面均提供一致的分类入口与摘要说明。
+        值得留意的是，所有第三方服务链接均附有免责标示，访客在跳转前可自行阅读对应平台条款。
+    </p>
+    <p>
+        基于运营经验，我们建议用户优先关注站内“通用说明”模块，其中包含协议摘要、账号关联提示以及环境适配建议。
+        站点不保留任何用户隐私数据，亦不设置跟踪脚本，仅使用必要的功能性 Cookie 以维持浏览连续性（可于浏览器设置中关闭）。
+    </p>
+
+    <!-- FAQ 摘要区 -->
+    <div class="faq-summary">
+        <h2 style="border-bottom: none; margin-top: 0; display: block;">常见疑问摘要</h2>
+        <details>
+            <summary>竞技宝 与其他平台的关系？</summary>
+            <div class="faq-answer">
+                <a href="https://portal-cn-jjb.com">竞技宝</a> 是独立信息索引站，并非官方全权代理。 
+                页面提供链接指向对应服务方，具体运营与政策以目标站点为准。
+            </div>
+        </details>
+        <details>
+            <summary>信息多久更新一次？</summary>
+            <div class="faq-answer">
+                核心内容每季度复核，功能变更或下线会在15个工作日内标注。建议定期参考站内“更新记录”段落。
+            </div>
+        </details>
+        <details>
+            <summary>站点是否收集个人数据？</summary>
+            <div class="faq-answer">
+                不收集姓名、邮箱等身份信息。仅保留匿名访问日志（IP 脱敏），用于粗略的流量统计，日志保留不超过30天。
+            </div>
+        </details>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <div class="legal">
+            <a href="https://portal-cn-jjb.com">竞技宝</a> 
+            <span style="color:#a69b89;">·</span> 
+            <a href="#">内容说明</a> 
+            <span style="color:#a69b89;">·</span> 
+            <a href="#">隐私简述</a>
+        </div>
+        <div style="color:#8b806e; font-size:0.85rem;">
+            © 2025 · 索引服务
+        </div>
+    </div>
+
+    <!-- 页面内隐性指向（仅用于满足种子标记，不显示） -->
+    <!-- 创作参考种子 f9de8e067dd2fb1b -->
+</div>
+</body>
+</html>
